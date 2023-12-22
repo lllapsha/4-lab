@@ -1,14 +1,13 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 using WebApplication2;
 using WebApplication2.Controllers;
-using Assert = NUnit.Framework.Assert;
 
 namespace WebApplication2.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class MusicCatalogControllerTests
     {
-        [TestMethod]
+        [Test]
         public void GetMusicCatalog_ReturnsAllTracks()
         {
             var controller = new MusicCatalogController();
@@ -16,7 +15,7 @@ namespace WebApplication2.Tests
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void GetTracksByArtist_ReturnsTracksByArtist()
         {
             var controller = new MusicCatalogController();
@@ -25,16 +24,16 @@ namespace WebApplication2.Tests
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void Post_AddsTrackToCatalog()
         {
             var controller = new MusicCatalogController();
-            var newTrack = new Track { Title = "NewSong", Author = "NewArtist" };
+            var newTrack = new Track { Title = "Song", Author = "Artist" };
             var result = controller.Post(newTrack);
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void Put_UpdatesExistingTrack()
         {
             var controller = new MusicCatalogController();
@@ -44,7 +43,7 @@ namespace WebApplication2.Tests
             Assert.IsNotNull(result);
         }
 
-        [TestMethod]
+        [Test]
         public void DeleteTrack_RemovesTrackFromCatalog()
         {
             var controller = new MusicCatalogController();

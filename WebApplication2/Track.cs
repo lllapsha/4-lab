@@ -8,15 +8,7 @@ namespace WebApplication2
 {
     public class Track
     {
-        //private string title;
-
-        //private string author;
-
-        //public Track(string title, string author)
-        //{
-        //    this.title = title;
-        //    this.author = author;
-        //}
+    
         public string Title { get; set; }
         public string Author { get; set; }
     }
